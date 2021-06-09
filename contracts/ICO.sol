@@ -98,7 +98,6 @@ contract ICO is Ownable {
     function total() public view returns (uint256) {
         return address(this).balance;
     }
-}
 
 /** @param sender is the Token's buyer.
  *  @param weiAmount is the amount of wei the buyer sends for a Token.
@@ -112,3 +111,4 @@ contract ICO is Ownable {
         _token.transferFrom(_token.owner(), sender/*address(this)*/, tokenAmount);
         emit Bought(sender, weiAmount);
     }
+}
