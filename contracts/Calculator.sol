@@ -2,11 +2,12 @@
 
 pragma solidity ^0.8.0;
 
-import "./IToken.sol";
+import "./Token.sol";
 
 contract Calculator {
-    IToken private _token;
+    FirstToken private _token;
     address private _owner;
+    uint256 private _price;
 
     event Added(address indexed user, int256 nb1, int256 nb2, int256 result);
     event Subtracted(address indexed user, int256 nb1, int256 nb2, int256 result);
@@ -60,7 +61,7 @@ contract Calculator {
         return _owner;
     }
 
-    function price() public pure returns (uint256) {
+    function price() public view  returns (uint256) {
         return _price;
     }
 }
